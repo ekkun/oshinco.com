@@ -1,0 +1,16 @@
+{
+	"folders": [
+    {
+      "path": "oshinco-com"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#009ddd",
+      "activityBarBadge.background": "#009ddd"
+    },
+    "editor.codeActionsOnSave": null,
+    "editor.tabSize": 2,
+    "editor.fontFamily": "Osaka-Mono, Menlo, Monaco, 'Courier New', monospace"
+  }
+}
