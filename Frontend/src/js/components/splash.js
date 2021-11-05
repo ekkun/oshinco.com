@@ -4,7 +4,7 @@
 (() => {
   const $splash = document.querySelector('.p-splash');
   const $splashInner = document.querySelector('.p-splash__inner');
-  //const sessionKey = sessionStorage.getItem('oshinco_visited');
+  const sessionKey = sessionStorage.getItem('oshinco_visited');
 
   const getWindowHeight = () => {
     const windowHeight = window.innerHeight;
