@@ -1,0 +1,21 @@
+// Variable
+@use './foundation/_variable' as *;
+
+// Mixin
+@use './foundation/_mixin' as m;
+
+// Section
+.p-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  .swiper {
+    overflow: hidden;
+    padding: 1em 0;
+
+    @media screen and (min-width: $tb-width) {
+      padding: 3em 0;
+    }
+  }
+}

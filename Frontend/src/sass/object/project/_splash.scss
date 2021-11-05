@@ -1,0 +1,68 @@
+// Variable
+@use './foundation/_variable' as *;
+
+// Mixin
+@use './foundation/_mixin' as m;
+
+// Splash
+.p-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-white;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 2s ease-out;
+  z-index: -1;
+
+  .js-splash & {
+    overflow: hidden;
+    z-index: 11111;
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 1s ease-out 0.35s 1 normal;
+  }
+
+  &__inner {
+    //display: flex;
+    //justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &__contents {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      width: 120px;
+
+      @media screen and (min-width: $tb-width) {
+        width: 180px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      @include m.font-size(12);
+      text-align: center;
+      margin: 1em 0;
+
+      @media screen and (min-width: $tb-width) {
+        @include m.font-size(14);
+      }
+    }
+  }
+}

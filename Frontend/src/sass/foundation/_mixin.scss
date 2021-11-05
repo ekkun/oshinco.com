@@ -1,0 +1,35 @@
+// Variable
+@use './foundation/_variable' as *;
+
+// font size
+@mixin font-size($font-size, $base-size: 16) {
+  font-size: $font-size + px;
+  font-size: ($font-size / $base-size) + rem;
+}
+
+@media screen and (min-width: $tb-width + 1) {
+  .pc-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $tb-width) {
+  .sp-none {
+    display: none;
+  }
+}
+
+// clear fix
+@mixin clearfix {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+
+  &::after {
+    clear: both;
+  }
+}

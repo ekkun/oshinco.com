@@ -1,0 +1,52 @@
+// Variable
+@use './foundation/_variable' as *;
+// Mixin
+@use './foundation/_mixin' as m;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  color: $color-black;
+  font-family: 'Noto Serif JP', serif;
+  line-height: 160%;
+  width: 100%;
+  height: 100%;
+  background-color: $color-white;
+  background-image: url(../images/background-texture.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 420px auto;
+  //overflow: scroll;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+
+  &.js-splash {
+    //opacity: 0;
+    background-image: none;
+    overflow: hidden;
+    animation: fadeIn 2s ease-out 0s 1 normal;
+
+    header,
+    main,
+    section,
+    footer {
+      opacity: 0;
+    }
+  }
+
+  @media all and (-ms-high-contrast: none) {
+    display: block;
+    flex-flow: unset;
+    height: 100%;
+  }
+}

@@ -1,0 +1,65 @@
+// Variable
+@use './foundation/_variable' as *;
+
+// Mixin
+@use './foundation/_mixin' as m;
+
+// Item
+.item {
+  &__link {
+    display: block;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $color-black;
+      text-decoration: none;
+    }
+  }
+
+  &__figure {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding-top: 120%;
+
+    .item__link & {
+      transition: all 0.6s ease;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    opacity: 0.8;
+  }
+
+  &__heading {
+    color: $color-black;
+    @include m.font-size(16);
+    font-family: 'Ropa Sans', sans-serif;
+    //font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin: 1em 0 0;
+    padding: 0;
+
+    .item__link & {
+      transition: all 0.2s ease;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
