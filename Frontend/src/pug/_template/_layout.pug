@@ -32,34 +32,54 @@ html(lang='ja')
       else
         title #{head.title} | #{site.title}
 
-      meta(name="keywords", content=`${ head.keywords }`)
-      meta(name="description", content=`${ head.description }`)
+      meta(name='keywords', content=`${ head.keywords }`)
+      meta(name='description', content=`${ head.description }`)
 
       if head.title === ''
-        meta(property="og:title", content=`${ site.title }`)
+        meta(property='og:title', content=`${ site.title }`)
       else
-        meta(property="og:title", content=`${ head.title } | ${ site.title }`)
+        meta(property='og:title', content=`${ head.title } | ${ site.title }`)
 
-      meta(property="og:description", content=`${ head.description }`)
-      meta(property="og:url", content=`${ site.URL }${ filePath }`)
-      meta(property="og:locale", content="ja_JP")
+      meta(property='og:description', content=`${ head.description }`)
+      meta(property='og:url', content=`${ site.URL }${ filePath }`)
+      meta(property='og:locale', content='ja_JP')
 
       if filePath === '/'
-        meta(property="og:type", content="website")
+        meta(property='og:type', content='website')
       else
-        meta(property="og:type", content="article")
+        meta(property='og:type', content='article')
 
-      meta(property="og:image", content=``)
+      meta(property='og:image', content=`${ filePath }assets/images/ogp_1200x630.png`)
+      meta(name='twitter:card' content='summary')
+      meta(name='twitter:site' content='@ekkun')
+      meta(name='twitter:creator' content='@ekkun')
+      meta(name='twitter:image' content=`${ filePath }assets/images/ogp_630x630.png`)
+
+      link(rel='shortcut icon', href=`${ filePath }assets/images/favicon.ico`)
+      link(rel='icon', type='image/x-icon', sizes='16x16 32x32', href=`${ filePath }assets/images/favicon.ico`)
+      link(rel='apple-touch-icon', sizes='152x152', href=`${ filePath }assets/images/favicon-152.png`)
+      link(rel='apple-touch-icon', sizes='144x144', href=`${ filePath }assets/images/favicon-144.png`)
+      link(rel='apple-touch-icon', sizes='120x120', href=`${ filePath }assets/images/favicon-120.png`)
+      link(rel='apple-touch-icon', sizes='114x114', href=`${ filePath }assets/images/favicon-114.png`)
+      link(rel='apple-touch-icon', sizes='180x180', href=`${ filePath }assets/images/favicon-180.png`)
+      link(rel='apple-touch-icon', sizes='72x72', href=`${ filePath }assets/images/favicon-72.png`)
+      link(rel='apple-touch-icon', sizes='57x57', href=`${ filePath }assets/images/favicon-57.png`)
+      link(rel='icon', sizes='32x32', href=`${ filePath }assets/images/favicon-32.png`)
+      link(rel='icon', sizes='192x192', href=`${ filePath }assets/images/favicon-192.png`)
+      meta(name='msapplication-TileColor', content='#ffffff')
+      meta(name='msapplication-TileImage', content=`${ filePath }assets/images/favicon-144.png`)
+      meta(name='theme-color', content='#ffffff')
+      link(rel='manifest', href=`${ filePath }assets/json/manifest.json`)
 
       block style
-        //- link(rel="shortcut icon", href=`${ filePath }assets/images/favicon/favicon.ico`)
+        //- link(rel='shortcut icon', href=`${ filePath }assets/images/favicon/favicon.ico`)
         link(rel='preconnect', href='https://fonts.googleapis.com')
         link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
         link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Ropa+Sans&display=swap')
         link(rel='stylesheet', href=`${ filePath }assets/css/style.css`)
 
       //-
-        script(src="https://www.googletagmanager.com/gtag/js?id=", async)
+        script(src='https://www.googletagmanager.com/gtag/js?id=', async)
         script
           | window.dataLayer = window.dataLayer || [];
           | function gtag(){dataLayer.push(arguments);}
