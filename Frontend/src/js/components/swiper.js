@@ -104,10 +104,11 @@ import Swiper from 'swiper/bundle';
       freeMode: true,
       centeredSlides: true,
       loop: true,
-      loopedSlides: 6,
+      loopedSlides: 3,
       slidesPerView: 6,
       spaceBetween: 120,
-      speed: 12000,
+      speed: 10000,
+      loopAdditionalSlides: 1,
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
