@@ -1,103 +1,81 @@
-# Gulp Template
+# Vite Template
 
-For node v14 or v16
-
-## npm パッケージをインストール
+## yarn パッケージをインストール
 
 ```
 #プロジェクトのディレクトリに移動して
-$ npm install
+$ yarn install
 ```
 
-## gulp の監視
+## Vite の監視
 
 ```
-$ gulp
+$ yarn start
 ```
 
-## 納品ファイル生成
+## 納品／アップロード用ファイル生成
 
-デプロイ用のファイル一式を生成
-
-```
-$ gulp build
-```
-
-## 納品ファイル一式削除
-
-デプロイ用のファイル一式を削除
-
-*※ gulp 時コピーエラーなどでコケる際は del コマンドを実行するとよい</span>*
+公開用ファイル一式を生成
 
 ```
-$ gulp del
+$ yarn build
 ```
 
+## 画像最適化＆webp 化
+
+画像の画像最適化と webp 化を同時に実行します
+監視、公開用すべてのコマンドで実行します
+
+```
+$ yarn images
+```
+
+<span style="font-size: x-small;">※ 画像追加、修正時にこのコマンドを実行してください。</span>
 
 ## ディレクトリ構成
-
-./src/ 内のファイルを編集
-
-- pug -> html
-- js -> babel -> js
-- sass -> css
 
 ```
 ├─ node_modules/
 │  └─ パッケージ各種
 │
-├─ dist/（ビルド後、納品ファイルがここに生成される）
+├─ dist/ (ビルド後、納品ファイルがここに生成されます)
 │  ├─ assets/
+│  │  ├─ css/
 │  │  ├─ fonts/
 │  │  ├─ images/
-│  │  ├─ css/
-│  │  ├─ js/
-│  │  └─ json/
-│  └─ index.html など
+│  │  └─ js/
+│  └─ index.html 他、ファイル、ディレクトリ群...
 │
-├─ src/（ビルド前のソース）
-│  ├─ fonts/
-│  ├─ html/ (直にHTMLを生成する場合)
-│  ├─ images/
-│  ├─ javascript/
+├─ src/（ソース）
+│  ├─ _templates/
 │  ├─ js/
-│  │  ├─ components/
-│  │  └─ main.js
-│  ├─ json/
-│  ├─ pug/
-│  │  ├─ _template/
-│  │  └─ index.pug
-│  └─ sass/
-│      ├─ foundation/
-│      ├─ layout/
-│      ├─ object/
-│      ├─ page/
-│      │  └─ index/
-│      ├─ style.scss
-│      └─ index.scss
+│  ├─ public/ (静的ファイル一式はコピーされます)
+│  ├─ scss/
+│  └─ index.pug
 │
-├─ .eslintrc.json
-├─ .gitignore
-├─ README.md
-├─ gulpfile.js
+├─ plugins/（プラグイン）
+│  ├─ vite-plugin-pug-build.ts
+│  ├─ vite-plugin-pug-serve.ts
+│  └─ vite-plugin-pug.ts
+│
+├─ .eslintrc.js
+├─ .jsbeautifyrc
+├─ .yarnrc.yml
+├─ babel.babelrc
+├─ convertImage.mjs
 ├─ package.json
-├─ postcss-sorting.json
-├─ scss-lint.yml
-└─ webpack.config.js
+├─ postcss.config.js
+├─ README.md
+├─ tailwind.config.js
+└─ vite.config.js
 ```
 
-## パッケージのバージョン管理
+## 再インストール
 
-更新、アップデートの確認に npm-check-updates をインストールする
-
-```
-$ sudo npm install -g npm-check-updates
-```
-
-ncu コマンドでアップデート
+`yarn` でエラーが出た場合は再インストールをしてください。
 
 ```
-$ ncu -u
+$ rm -rf node_modules
+$ yarn cache clean --force
+$ yarn install
 ```
-
-※ `gulp-imagemin` は 8.0.0 にしないようにしてください。`"gulp-imagemin": "<=7.1.0",`

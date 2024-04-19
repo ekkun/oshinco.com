@@ -19,7 +19,7 @@ import Swiper from 'swiper/bundle';
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
-        verseDirection: true,
+        //reverseDirection: true,
       },
       breakpoints: {
         320: {
@@ -112,7 +112,7 @@ import Swiper from 'swiper/bundle';
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
-        //verseDirection: true,
+        //reverseDirection: true,
       },
       breakpoints: {
         320: {

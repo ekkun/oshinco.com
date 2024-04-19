@@ -1,18 +1,18 @@
 //- 変数初期設定
 -
-  var site = {}
+  let site = {}
   site.title = 'Oshinco™ Official | おしんこ™ オフィシャル'
   site.keywords = ''
   site.description = 'おしんこ、女はミルク、ワカメボーイズ、我らは永遠いつもありがとうこれからもよろしく'
   site.URL = ''
 
-  var head = {}
+  let head = {}
   head.title = ''
   head.slug = ''
   head.keywords    = ''
   head.description = ''
 
-  var filePath = '/'
+  let filePath = '/'
 
 //- 変数読み込み
 block vars
@@ -72,11 +72,10 @@ html(lang='ja')
       link(rel='manifest', href=`${ filePath }assets/json/manifest.json`)
 
       block style
-        //- link(rel='shortcut icon', href=`${ filePath }assets/images/favicon/favicon.ico`)
         link(rel='preconnect', href='https://fonts.googleapis.com')
         link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
         link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Ropa+Sans&display=swap')
-        link(rel='stylesheet', href=`${ filePath }assets/css/style.css`)
+
 
       //-
         script(src='https://www.googletagmanager.com/gtag/js?id=', async)
@@ -107,5 +106,8 @@ html(lang='ja')
 
     include ./_footer
 
-    block scripts
-      script(src=`${ filePath }assets/js/main.js`)
+    block append style
+      link(rel='stylesheet', href=`/scss/style.scss`)
+
+    block append scripts
+      script(src="/js/main.js" type="module")
