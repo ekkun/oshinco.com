@@ -1,19 +1,7 @@
 @charset 'utf-8';
 
-// Foundation
-@use './foundation/_reset';
-@use './foundation/_normalize';
-@use './foundation/_reboot';
-@use './foundation/_base';
-@use './foundation/_swiper';
-
-// Layout
-@use './layout/_header';
-@use './layout/_main';
-@use './layout/_footer';
-
-// Object
-@use './object/component/_item';
-@use './object/project/_splash';
-@use './object/project/_section';
-@use './object/utility/_animation';
+@use 'foundation';
+@use 'layout';
+@use 'object/component';
+@use 'object/project';
+@use 'object/utility';

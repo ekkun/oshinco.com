@@ -1,4 +1,4 @@
-extends ./_template/_layout
+extends ./_templates/_layout
 
 block vars
   -
@@ -6,7 +6,23 @@ block vars
     head.slug = 'index'
     head.keywords = 'Oshinco,おしんこ,女はミルク,ワカメボーイズ,ワカメ,アッキー,エックン'
     head.description = 'おしんこ、女はミルク、ワカメボーイズ、我らは永遠いつもありがとうこれからもよろしく'
-  - var isIndex = true
+    isIndex = true
+    wakame = [
+      { name: "WAKAME", link: "https://www.flickr.com/photos/ryotezuka/", image: "/assets/images/avatar_wakame_orange.svg" },
+      { name: "EKKUN", link: "https://www.flickr.com/photos/ekkun/", image: "/assets/images/avatar_ekkun_default.svg" },
+      { name: "ACKEY", link: "https://www.flickr.com/photos/Ackey-Chan/", image: "/assets/images/avatar_ackey_default.svg" },
+    ]
+    ackey = [
+      { name: "ACKEY", link: "https://www.flickr.com/photos/Ackey-Chan/", image: "/assets/images/avatar_ackey_orange.svg" },
+      { name: "WAKAME", link: "https://www.flickr.com/photos/ryotezuka/", image: "/assets/images/avatar_wakame_default.svg" },
+      { name: "EKKUN", link: "https://www.flickr.com/photos/ekkun/", image: "/assets/images/avatar_ekkun_default.svg" },
+
+    ]
+    ekkun = [
+      { name: "EKKUN", link: "https://www.flickr.com/photos/ekkun/", image: "/assets/images/avatar_ekkun_orange.svg" },
+      { name: "ACKEY", link: "https://www.flickr.com/photos/Ackey-Chan/", image: "/assets/images/avatar_ackey_default.svg" },
+      { name: "WAKAME", link: "https://www.flickr.com/photos/ryotezuka/", image: "/assets/images/avatar_wakame_default.svg" },
+    ]
 
 block append head
   script(src="https://www.googletagmanager.com/gtag/js?id=UA-57420-13", async)
@@ -31,104 +47,35 @@ block main
     section.p-section
       .swiper(id='js-swiper-wakame')
         .swiper-wrapper
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_orange.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_default.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_default.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_orange.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_default.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_default.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
+          - for (let i = 0; i < 2; i++)
+            each item in wakame
+              .swiper-slide.item
+                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                  figure.item__figure
+                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                  h4.item__heading= item.name
 
     section.p-section
       .swiper(id='js-swiper-ackey')
         .swiper-wrapper
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_orange.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_default.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_default.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_orange.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_default.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_default.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
+          - for (let i = 0; i < 2; i++)
+            each item in ackey
+              .swiper-slide.item
+                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                  figure.item__figure
+                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                  h4.item__heading= item.name
 
     section.p-section
       .swiper(id='js-swiper-ekkun')
         .swiper-wrapper
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_orange.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_default.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_default.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ekkun/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ekkun_orange.svg', alt='EKKUN', class='item__image')
-              h4.item__heading EKKUN
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/Ackey-Chan/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_ackey_default.svg', alt='ACKEY', class='item__image')
-              h4.item__heading ACKEY
-          .swiper-slide.item
-            a.item__link(href='https://www.flickr.com/photos/ryotezuka/', target='_blank' rel='noopener noreferrer', class="js-item")
-              figure.item__figure
-                img(src='/assets/images/blank.png', data-image-src='/assets/images/avatar_wakame_default.svg', alt='WAKAME', class='item__image')
-              h4.item__heading WAKAME
+          - for (let i = 0; i < 2; i++)
+            each item in ekkun
+              .swiper-slide.item
+                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                  figure.item__figure
+                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                  h4.item__heading= item.name
 
 block append scripts
   //- script(src=`${ filePath }assets/js/main.min.js`)

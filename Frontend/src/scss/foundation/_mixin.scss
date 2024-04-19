@@ -1,5 +1,5 @@
 // Variable
-@use './foundation/_variable' as *;
+@use './_variable' as *;
 
 // font size
 @mixin font-size($font-size, $base-size: 16) {
