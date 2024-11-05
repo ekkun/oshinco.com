@@ -83,7 +83,12 @@ export default defineConfig({
   root: path.resolve(__dirname, './src'),
 
   css: {
-    devSourcemap: true, // this one
+    devSourcemap: true,
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
   },
 
   build: {
