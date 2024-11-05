@@ -15,6 +15,7 @@
 
     .splide__track {
       padding: 1.2em 0;
+      will-change: transform;
 
       @media screen and (min-width: $tb-width) {
         padding: 3em 0;

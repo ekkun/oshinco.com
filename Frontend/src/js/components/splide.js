@@ -17,8 +17,9 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
       gap: '120px',
       arrows: false,
       pagination: false,
+      flickPower: 500,
       autoScroll: {
-        speed: 0.8,
+        speed: 0.6,
         pauseOnHover: false,
         pauseOnFocus: false,
       },
@@ -61,8 +62,9 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
       gap: '120px',
       arrows: false,
       pagination: false,
+      flickPower: 500,
       autoScroll: {
-        speed: 0.8,
+        speed: 0.6,
         pauseOnHover: false,
         pauseOnFocus: false,
       },
@@ -105,8 +107,9 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
       gap: '120px',
       arrows: false,
       pagination: false,
+      flickPower: 500,
       autoScroll: {
-        speed: 0.8,
+        speed: 0.6,
         pauseOnHover: false,
         pauseOnFocus: false,
       },
