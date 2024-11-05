@@ -10,12 +10,15 @@
   margin: 0;
   padding: 0;
 
-  .swiper {
+  .splide {
     overflow: hidden;
-    padding: 1em 0;
 
-    @media screen and (min-width: $tb-width) {
-      padding: 3em 0;
+    .splide__track {
+      padding: 1.2em 0;
+
+      @media screen and (min-width: $tb-width) {
+        padding: 3em 0;
+      }
     }
   }
 }

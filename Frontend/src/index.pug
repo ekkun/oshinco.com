@@ -45,37 +45,43 @@ block main
 
   main
     section.p-section
-      .swiper(id='js-swiper-wakame')
-        .swiper-wrapper
-          - for (let i = 0; i < 3; i++)
-            each item in wakame
-              .swiper-slide.item
-                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
-                  figure.item__figure
-                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
-                  h4.item__heading= item.name
+      .splide(class="js-swiper-wakame" aria-label="ワカメ")
+        .splide-wrapper
+          .splide__track
+            .splide__list
+              - for (let i = 0; i < 1; i++)
+                each item in wakame
+                  .splide__slide.item
+                    a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                      figure.item__figure
+                        img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                      h4.item__heading= item.name
 
     section.p-section
-      .swiper(id='js-swiper-ackey')
-        .swiper-wrapper
-          - for (let i = 0; i < 3; i++)
-            each item in ackey
-              .swiper-slide.item
-                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
-                  figure.item__figure
-                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
-                  h4.item__heading= item.name
+      .splide(class="js-swiper-ackey" aria-label="アッキー")
+        .splide-wrapper
+          .splide__track
+            .splide__list
+              - for (let i = 0; i < 1; i++)
+                each item in ackey
+                  .splide__slide.item
+                    a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                      figure.item__figure
+                        img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                      h4.item__heading= item.name
 
     section.p-section
-      .swiper(id='js-swiper-ekkun')
-        .swiper-wrapper
-          - for (let i = 0; i < 3; i++)
-            each item in ekkun
-              .swiper-slide.item
-                a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
-                  figure.item__figure
-                    img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
-                  h4.item__heading= item.name
+      .splide(class="js-swiper-ekkun" aria-label="エックン")
+        .splide-wrapper
+          .splide__track
+            .splide__list
+              - for (let i = 0; i < 1; i++)
+                each item in ekkun
+                  .splide__slide.item
+                    a.item__link(href=item.link, target='_blank', rel='noopener noreferrer', class='js-item')
+                      figure.item__figure
+                        img(src='/assets/images/blank.png', data-image-src=item.image, alt=item.name, class='item__image')
+                      h4.item__heading= item.name
 
 block append scripts
   //- script(src=`${ filePath }assets/js/main.min.js`)
