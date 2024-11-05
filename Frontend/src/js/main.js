@@ -1,5 +1,7 @@
 'use strict';
 
-import './components/swiper.js';
-import './components/item.js';
-import './components/splash.js';
+import './components/adjustViewport';
+//import './components/swiper';
+import './components/item';
+import './components/splide';
+import './components/splash';
