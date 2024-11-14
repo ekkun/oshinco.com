@@ -15,16 +15,29 @@
     max-width: $max-width;
     margin: 0 auto;
 
-    address {
+    a {
       display: inline-block;
       color: $color-ash;
       @include m.font-size(12);
       font-weight: 600;
-      font-style: italic;
+      //font-style: italic;
       line-height: 1;
       background-color: $color-white;
       margin: 0;
       padding: 0.8em 1.2em;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-black;
+      }
+
+      address {
+        display: inline-block;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }
