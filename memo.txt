@@ -1,0 +1,32 @@
+co-op.oshinco.com
+
+おしんこコープウェブサイト
+
+--------------------------------------------------
+
+■ ディレクトリ構成（仮）
+│
+├─ Docs/
+│  └─ ドキュメント各種
+│
+└─ Frontend
+    └─ ソース各種
+
+--------------------------------------------------
+
+■ MySQL
+https://mysqladmin.lolipop.jp/pma/?server=mysql138.phy.lolipop.lan
+DB: LA02183980-oshinco
+ID: LA02183980
+PW: Hu0Fou1xarai1gai
+HT: mysql138.phy.lolipop.lan
+
+--------------------------------------------------
+
+■ WordPress
+https://co-op.oshinco.com/wp-admin/
+ID: ekkun
+PW: Ackey4649
+
+
+
